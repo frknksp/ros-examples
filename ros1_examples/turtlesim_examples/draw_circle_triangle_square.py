@@ -14,9 +14,11 @@ def draw_shape(shape):
     vel_msg = Twist()
 
     if shape == 'kare':
+        side_length = float(input("Kare için kenar uzunluğu girin: "))
         for _ in range(4):
             rospy.sleep(0.5)
-            vel_msg.linear.x = 3
+            #vel_msg.linear.x = 3
+            vel_msg.linear.x = side_length
             vel_msg.angular.z = 0
             velocity_publisher.publish(vel_msg)
             rospy.sleep(1)
@@ -26,17 +28,21 @@ def draw_shape(shape):
             velocity_publisher.publish(vel_msg)
             rospy.sleep(1)
     elif shape == 'yuvarlak':
+        radius = float(input("Yarıçapı girin: "))
+
         rospy.sleep(0.5)
-        vel_msg.linear.x = 1
         vel_msg.angular.z = 0.523598  # 30 derece
+        vel_msg.linear.x = radius/0.523598
+
         for _ in range(12):
             velocity_publisher.publish(vel_msg)
             rospy.sleep(1)
 
     elif shape == 'üçgen':
+        side_length = float(input("Üçgen için kenar uzunluğu girin: "))
         for _ in range(3):
             rospy.sleep(0.5)
-            vel_msg.linear.x = 2
+            vel_msg.linear.x = side_length
             vel_msg.angular.z = 0
             velocity_publisher.publish(vel_msg)
             rospy.sleep(1)
@@ -63,5 +69,10 @@ def change_background_color_client():
 
 if __name__ == '__main__':
     shape = input("Çizilecek şekli girin (kare/yuvarlak/üçgen): ")
+    if shape not in ['kare', 'yuvarlak', 'üçgen']:
+        print("Hatalı giriş yaptınız!")
+        exit()
+        
+        
     draw_shape(shape)
     change_background_color_client()
