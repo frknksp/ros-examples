@@ -8,10 +8,10 @@ Model dosyalarına aşağıdaki github reposundan ulaşabilirsiniz.
 [Dataset-of-Gazebo-Worlds-Models-and-Maps](https://github.com/mlherd/Dataset-of-Gazebo-Worlds-Models-and-Maps)
 
 1. **AWS Small House**
-   ![small_house](https://github.com/frknksp/birfen-staj/blob/master/gazebo_world_maps/aws_small_house/small_house.jpg?raw=true)
+   ![small_house](https://github.com/frknksp/birfen-staj/blob/master/ros1_examples/gazebo_world_maps/aws_small_house/small_house.jpg?raw=true)
 
 2. **AWS Bookstore**
-   ![bookstore](https://github.com/frknksp/birfen-staj/blob/master/gazebo_world_maps/aws_bookstore/bookstore.jpg?raw=true)
+   ![bookstore](https://github.com/frknksp/birfen-staj/blob/master/ros1_examples/gazebo_world_maps/aws_bookstore/bookstore.jpg?raw=true)
 
 ## Haritaların Oluşturulması
 
